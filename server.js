@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/numerologyData");
+// mongoose.connect("mongodb://127.0.0.1:27017/numerologyData");
 
 app.set("view engine", "ejs");
 // importing all routing files

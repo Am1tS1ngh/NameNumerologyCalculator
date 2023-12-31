@@ -111,7 +111,7 @@ router.post("/calculate", async (req,res)=> {
     const descThree = dreamDescription[result.dreamNumber]
 
     try {
-        res.render("result", {name, result, descOne: descOne.content, descTwo: descTwo.content, descThree: descThree.content})
+        res.render("result", {name, result, descOne: descOne, descTwo: descTwo, descThree: descThree})
         
     } catch (error) {
         console.log(error);

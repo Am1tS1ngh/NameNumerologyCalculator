@@ -103,12 +103,12 @@ router.post("/calculate", async (req,res)=> {
     const { name } = req.body;
     const result = calculateNumerologySum(name)
 
-    const descOne = await DestinyModel.findOne({resultKey: result.destinyNumber})
-    const descTwo = await HeartModel.findOne({resultKey: result.heartDesireNumber})
-    const descThree = await DreamModel.findOne({resultKey: result.dreamNumber})
-    // const descOne = destinyDescription[result.destinyNumber]
-    // const descTwo = soulUrgeDescription[result.heartDesireNumber]
-    // const descThree = dreamDescription[result.dreamNumber]
+    // const descOne = await DestinyModel.findOne({resultKey: result.destinyNumber})
+    // const descTwo = await HeartModel.findOne({resultKey: result.heartDesireNumber})
+    // const descThree = await DreamModel.findOne({resultKey: result.dreamNumber})
+    const descOne = destinyDescription[result.destinyNumber]
+    const descTwo = soulUrgeDescription[result.heartDesireNumber]
+    const descThree = dreamDescription[result.dreamNumber]
 
     try {
         res.render("result", {name, result, descOne: descOne.content, descTwo: descTwo.content, descThree: descThree.content})
